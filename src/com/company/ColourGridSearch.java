@@ -7,7 +7,7 @@ public class ColourGridSearch {
     private int numberOfColors;
     private int row;
     private int column;
-    private int[][] grid;
+    private Integer[][] grid;
     String[][] finalArray;
 
     public ColourGridSearch(int numberOfColors, int row, int column) {
@@ -18,7 +18,7 @@ public class ColourGridSearch {
     }
 
     private void createGame(int numberOfColors, int row, int column){
-        grid = new int[row][column];
+        grid = new Integer[row][column];
         finalArray = new String[row][column];
         for (int i = 0; i < row; ++i) {
             for (int j = 0; j < column; ++j) {
@@ -87,16 +87,7 @@ public class ColourGridSearch {
         return temporaryValues;
     }
 
-    private void print(int[][] input){
-        for(int i = 0; i < this.row; ++i){
-            for(int j=0; j < this.column; ++j){
-                System.out.print(input[i][j]+" | ");
-            }
-            System.out.println();
-        }
-    }
-
-    private void print(String[][] input){
+    private <T> void print(T[][] input){
         for(int i = 0; i < this.row; ++i){
             for(int j=0; j < this.column; ++j){
                 System.out.print(input[i][j]+" | ");
